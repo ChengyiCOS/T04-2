@@ -156,3 +156,9 @@ footer {
   .facts, .chart-grid { grid-template-columns: 1fr; }
   main { padding-top: 32px; }
 }
+
+.responsive-svg-container {
+margin: 0 auto; /* center */
+width: 100%; /* fill parent width */
+max-width: 1200px; /* cap max width */
+}
