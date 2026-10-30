@@ -11,22 +11,60 @@
   <a class="brand" href="index.html"><img src="images/PowerIcon.png" alt="Power logo"><span>Appliance Energy (AU)</span></a>
   <div class="nav-links"><a class="active" href="index.html">Home</a><a href="televisions.html">Televisions</a><a href="about.html">About Us</a></div>
 </nav></header>
+<!--
 <h1>Appliance Energy Consumption</h1>
 <div1 id="content"></div1>
-<!-- Give the SVG a size so shapes can be seen -->
+
 <svg width="300" height="150"></svg>
-<!-- Load D3 first, then your D3 code file -->
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="energy-d3.js"></script>
+-->
 <main>
-    <!-- NEW: Container for T04-3 chart -->
+  <!-- Container for future D3 chart -->
   <div class="responsive-svg-container"></div>
-  <!-- D3 library -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <!-- NEW: JS for T04-3 only -->
-  <script src="t04-3-bars.js"></script>
-  <!-- Old T04-2 demo (temporarily disabled) -->
-  <!-- <script src="energy-d3.js"></script> -->
+
+  <!-- Hero section -->
+  <section class="hero">
+    <h1>Appliance Energy Use in Australia</h1>
+    <p class="lead">
+      This site gives a simple overview of household appliance energy
+      consumption in the Australian market.
+    </p>
+  </section>
+
+  <section>
+    <h2>Quick facts</h2>
+    <div class="facts">
+      <article class="fact-card">
+        <strong>Energy labels</strong>
+        <span>Star ratings help compare appliance efficiency at a glance.</span>
+      </article>
+
+      <article class="fact-card">
+        <strong>Standby power</strong>
+        <span>Standby consumption can add to electricity costs, so switch
+        devices fully off when practical.</span>
+      </article>
+
+      <article class="fact-card">
+        <strong>Efficiency</strong>
+        <span>Higher-efficiency models can reduce electricity use over
+        the life of an appliance.</span>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- D3 library -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- NEW: T04-4 loader -->
+<script src="t04-4-load.js"></script>
+
+<!-- Old JS files (disabled while doing T04-4) -->
+<!-- <script src="energy-d3.js"></script> -->
+<!-- <script src="t04-3-bars.js"></script> -->
   <section class="hero">
     <h1>Appliance Energy Use in Australia</h1>
     <p class="lead">This site gives a simple overview of household appliance energy consumption in the Australian market.</p>
