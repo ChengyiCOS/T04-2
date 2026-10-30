@@ -1,94 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Appliance Energy (AU)</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Appliance Energy (AU)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<header class="site-header"><nav class="navbar">
-  <a class="brand" href="index.html"><img src="images/PowerIcon.png" alt="Power logo"><span>Appliance Energy (AU)</span></a>
-  <div class="nav-links"><a class="active" href="index.html">Home</a><a href="televisions.html">Televisions</a><a href="about.html">About Us</a></div>
-</nav></header>
-<!--
-<h1>Appliance Energy Consumption</h1>
-<div1 id="content"></div1>
 
-<svg width="300" height="150"></svg>
+    <!-- Header and Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="brand" href="index.html">
+                <img src="images/PowerIcon.png" alt="Power logo">
+                <span>Appliance Energy (AU)</span>
+            </a>
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="energy-d3.js"></script>
--->
-<main>
-  <!-- Container for future D3 chart -->
-  <div class="responsive-svg-container"></div>
+            <div class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="televisions.html">Televisions</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Hero section -->
-  <section class="hero">
-    <h1>Appliance Energy Use in Australia</h1>
-    <p class="lead">
-      This site gives a simple overview of household appliance energy
-      consumption in the Australian market.
-    </p>
-  </section>
+    <main>
 
-  <section>
-    <h2>Quick facts</h2>
-    <div class="facts">
-      <article class="fact-card">
-        <strong>Energy labels</strong>
-        <span>Star ratings help compare appliance efficiency at a glance.</span>
-      </article>
+        <!-- T04-7: D3 Bar Chart Container -->
+        <div class="responsive-svg-container"></div>
 
-      <article class="fact-card">
-        <strong>Standby power</strong>
-        <span>Standby consumption can add to electricity costs, so switch
-        devices fully off when practical.</span>
-      </article>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Appliance Energy Use in Australia</h1>
+            <p class="lead">
+                This site gives a simple overview of household appliance energy
+                consumption in the Australian market.
+            </p>
+        </section>
 
-      <article class="fact-card">
-        <strong>Efficiency</strong>
-        <span>Higher-efficiency models can reduce electricity use over
-        the life of an appliance.</span>
-      </article>
-    </div>
-  </section>
-</main>
+        <!-- Quick Facts Section -->
+        <section>
+            <h2>Quick facts</h2>
 
-<!-- D3 library -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
+            <div class="facts">
 
-<!-- NEW: T04-4 loader -->
-<script src="t04-4-load.js"></script>
+                <article class="fact-card">
+                    <strong>Energy labels</strong>
+                    <span>
+                        Star ratings help compare appliance efficiency at a glance.
+                    </span>
+                </article>
 
-<!-- Old JS files (disabled while doing T04-4) -->
-<!-- <script src="energy-d3.js"></script> -->
-<!-- <script src="t04-3-bars.js"></script> -->
-  <section class="hero">
-    <h1>Appliance Energy Use in Australia</h1>
-    <p class="lead">This site gives a simple overview of household appliance energy consumption in the Australian market.</p>
-  </section>
-  <section>
-    <h2>Quick facts</h2>
-    <div class="facts">
-      <article class="fact-card"><strong>Energy labels</strong><span>Star ratings help compare appliance efficiency at a glance.</span></article>
-      <article class="fact-card"><strong>Standby power</strong><span>Standby consumption can add to electricity costs, so switch devices fully off when practical.</span></article>
-      <article class="fact-card"><strong>Efficiency</strong><span>Higher-efficiency models can reduce electricity use over the life of an appliance.</span></article>
-    </div>
-  </section>
-</main>
-<!-- D3 library -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
+                <article class="fact-card">
+                    <strong>Standby power</strong>
+                    <span>
+                        Standby consumption can add to electricity costs, so switch
+                        devices fully off when practical.
+                    </span>
+                </article>
 
-<!-- T04-4: Load and prepare CSV data -->
-<script src="t04-4-load.js"></script>
+                <article class="fact-card">
+                    <strong>Efficiency</strong>
+                    <span>
+                        Higher-efficiency models can reduce electricity use over
+                        the life of an appliance.
+                    </span>
+                </article>
 
-<!-- T04-5: Create SVG bar chart -->
-<script src="t04-5-bars.js"></script>
+            </div>
+        </section>
 
-</body>
-</html>
-<footer><div class="footer-inner"><span>© 104400714 Lim Cheng Yi</span><span>Built with assistance from GenAI for starter code/content</span></div></footer>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <span>© 104400714 Lim Cheng Yi</span>
+            <span>Built with assistance from GenAI for starter code/content</span>
+        </div>
+    </footer>
+
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- T04-4: Load and prepare CSV data -->
+    <script src="t04-4-load.js"></script>
+
+    <!-- T04-7: Create grouped bar chart with labels -->
+    <script src="t04-5-bars.js"></script>
+
 </body>
 </html>

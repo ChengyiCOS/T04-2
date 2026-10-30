@@ -1,37 +1,40 @@
-// T04-6: Create SVG Bar Chart Using D3 Scales
+
+// T04-7: Bar Chart with Category and Value Labels
 
 const createBarChart = (data) => {
 
-    // SVG internal coordinate system
+    // --- Sizes (logical vs. display) ---
     const viewW = 500;
-    const viewH = 1600;
+    const viewH = Math.max(220, data.length * 28);
 
-    // SVG displayed size on webpage
     const displayW = 640;
-    const displayH = 420;
+    const displayH = Math.min(480, data.length * 24 + 40);
 
+    // --- SVG root ---
     const svg = d3.select(".responsive-svg-container")
         .append("svg")
         .attr("viewBox", `0 0 ${viewW} ${viewH}`)
         .attr("width", displayW)
         .attr("height", displayH)
-        .style("border", "1px solid black");
+        .style("border", "1px solid #ccc");
 
-    // X scale (numeric)
+    // --- Scales (from T04-6) ---
     const xMax = d3.max(data, d => d.count);
 
     const xScale = d3.scaleLinear()
         .domain([0, xMax])
         .range([0, viewW]);
 
-    // Y scale (categorical)
     const yScale = d3.scaleBand()
         .domain(data.map(d => d.brand))
         .range([0, viewH])
         .paddingInner(0.2)
         .paddingOuter(0.1);
 
-    // Bars
+    // OLD rectangle-only drawing block from T04-6
+    // Commented out for T04-7.
+
+    /*
     svg.selectAll("rect")
         .data(data)
         .join("rect")
@@ -41,5 +44,43 @@ const createBarChart = (data) => {
         .attr("width", d => xScale(d.count))
         .attr("height", yScale.bandwidth())
         .attr("fill", "steelblue");
+    */
+
+    // --- NEW in T04-7: Group per row ---
+    const labelX = 100;
+
+    const barAndLabel = svg
+        .selectAll("g")
+        .data(data)
+        .join("g")
+        .attr("transform", d => `translate(0, ${yScale(d.brand)})`);
+
+    // --- Bar rectangle inside each group ---
+    barAndLabel
+        .append("rect")
+        .attr("x", labelX)
+        .attr("y", 0)
+        .attr("width", d => xScale(d.count))
+        .attr("height", yScale.bandwidth())
+        .attr("fill", "steelblue");
+
+    // --- Category text ---
+    barAndLabel
+        .append("text")
+        .text(d => d.brand)
+        .attr("x", labelX)
+        .attr("y", 15)
+        .attr("text-anchor", "end")
+        .style("font-family", "sans-serif")
+        .style("font-size", "13px");
+
+    // --- Value text ---
+    barAndLabel
+        .append("text")
+        .text(d => d.count)
+        .attr("x", d => labelX + xScale(d.count) + 4)
+        .attr("y", 12)
+        .style("font-family", "sans-serif")
+        .style("font-size", "13px");
 
 };
